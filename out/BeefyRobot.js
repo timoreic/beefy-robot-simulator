@@ -54,5 +54,28 @@ class BeefyRobot {
             }
         }
     }
+    move() {
+        if (this.position) {
+            let x = parseInt(this.position[0]);
+            let y = parseInt(this.position[1]);
+            const direction = this.position[2];
+            if (direction == 'NORTH' && y < 4) {
+                y += 1;
+                this.position[1] = y.toString();
+            }
+            if (direction == 'SOUTH' && y > 0) {
+                y -= 1;
+                this.position[1] = y.toString();
+            }
+            if (direction == 'EAST' && x < 4) {
+                x += 1;
+                this.position[0] = x.toString();
+            }
+            if (direction == 'WEST' && x > 0) {
+                x -= 1;
+                this.position[0] = x.toString();
+            }
+        }
+    }
 }
 exports.default = BeefyRobot;
