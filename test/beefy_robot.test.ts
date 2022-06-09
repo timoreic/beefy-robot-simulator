@@ -23,3 +23,20 @@ describe('test BeefyRobot report method', () => {
     expect(beefyRobot.report()).toMatch(expected);
   });
 });
+
+describe('test BeefyRobot rotate method', () => {
+  const beefyRobot = new BeefyRobot();
+
+  test('rotate left', () => {
+    beefyRobot.place('PLACE 0,0,NORTH');
+    beefyRobot.rotate('LEFT');
+    const expected = '0,0,WEST';
+    expect(beefyRobot.report()).toMatch(expected);
+  });
+
+  test('rotate right', () => {
+    beefyRobot.rotate('RIGHT');
+    const expected = '0,0,NORTH';
+    expect(beefyRobot.report()).toMatch(expected);
+  });
+});

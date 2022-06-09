@@ -21,5 +21,38 @@ class BeefyRobot {
         }
         return report;
     }
+    rotate(direction) {
+        if (this.position) {
+            const current = this.position[2];
+            if (direction == 'LEFT') {
+                if (current == 'NORTH') {
+                    this.position[2] = 'WEST';
+                }
+                if (current == 'EAST') {
+                    this.position[2] = 'NORTH';
+                }
+                if (current == 'SOUTH') {
+                    this.position[2] = 'EAST';
+                }
+                if (current == 'WEST') {
+                    this.position[2] = 'SOUTH';
+                }
+            }
+            if (direction == 'RIGHT') {
+                if (current == 'NORTH') {
+                    this.position[2] = 'EAST';
+                }
+                if (current == 'EAST') {
+                    this.position[2] = 'SOUTH';
+                }
+                if (current == 'SOUTH') {
+                    this.position[2] = 'WEST';
+                }
+                if (current == 'WEST') {
+                    this.position[2] = 'NORTH';
+                }
+            }
+        }
+    }
 }
 exports.default = BeefyRobot;

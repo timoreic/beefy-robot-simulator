@@ -19,4 +19,7 @@ for (const index in commands) {
   if (commands[index] == 'REPORT') {
     console.log(beefyRobot.report());
   }
+  if (commands[index] == 'LEFT' || commands[index] == 'RIGHT') {
+    beefyRobot.rotate(commands[index]);
+  }
 }
