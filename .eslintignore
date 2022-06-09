@@ -1,0 +1,4 @@
+# Don't lint node_modules
+node_modules
+# Don't lint compiled ts code
+out
