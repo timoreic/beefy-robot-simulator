@@ -1,5 +1,9 @@
-export function hello(): string {
-  return 'Hello World!';
-}
+import * as fs from 'fs';
 
-console.log(hello());
+// Read commands.txt to an array
+const commands = fs
+  .readFileSync('./commands.txt', 'utf8')
+  .toString()
+  .split('\n');
+
+console.log(commands);
