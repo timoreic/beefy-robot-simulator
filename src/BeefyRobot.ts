@@ -13,4 +13,16 @@ export default class BeefyRobot {
       this.position = position.substring(6).split(',');
     }
   }
+
+  report(): string {
+    let report: string;
+
+    if (this.position) {
+      report = this.position.join(',');
+    } else {
+      report = 'BeefyRobot is not on the table';
+    }
+
+    return report;
+  }
 }

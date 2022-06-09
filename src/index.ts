@@ -13,7 +13,10 @@ const beefyRobot = new BeefyRobot();
 
 // Execute commands
 for (const index in commands) {
-  beefyRobot.place(commands[index]);
+  if (commands[index].substring(0, 5) == 'PLACE') {
+    beefyRobot.place(commands[index]);
+  }
+  if (commands[index] == 'REPORT') {
+    console.log(beefyRobot.report());
+  }
 }
-
-console.log(beefyRobot.position);

@@ -13,3 +13,13 @@ describe('test BeefyRobot place method', () => {
     expect(beefyRobot.position).toEqual(['0', '0', 'NORTH']);
   });
 });
+
+describe('test BeefyRobot report method', () => {
+  const beefyRobot = new BeefyRobot();
+
+  test('report while on table', () => {
+    beefyRobot.place('PLACE 0,0,NORTH');
+    const expected = '0,0,NORTH';
+    expect(beefyRobot.report()).toMatch(expected);
+  });
+});

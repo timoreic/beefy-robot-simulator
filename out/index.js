@@ -37,6 +37,10 @@ const commands = fs
 const beefyRobot = new BeefyRobot_1.default();
 // Execute commands
 for (const index in commands) {
-    beefyRobot.place(commands[index]);
+    if (commands[index].substring(0, 5) == 'PLACE') {
+        beefyRobot.place(commands[index]);
+    }
+    if (commands[index] == 'REPORT') {
+        console.log(beefyRobot.report());
+    }
 }
-console.log(beefyRobot.position);
