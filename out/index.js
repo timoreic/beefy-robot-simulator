@@ -1,2 +1,8 @@
 "use strict";
-console.log('Hello World!');
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.hello = void 0;
+function hello() {
+    return 'Hello World!';
+}
+exports.hello = hello;
+console.log(hello());
