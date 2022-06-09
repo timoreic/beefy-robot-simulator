@@ -8,6 +8,8 @@
 
 ## Commands
 
+> Edit the commands.txt file to change Beefy Robots behaviour. Every line should contain only one of the following commands.
+
 #### `PLACE X,Y,F MOVE`
 
 PLACE will put Beefy on the table in position X,Y and facing NORTH, SOUTH, EAST or WEST. The origin (0,0) can be considered to be the SOUTH WEST most corner. - The first valid command to Beefy is a PLACE command, after that, any sequence of commands may be issued, in any order, including another PLACE command. The application should discard all commands in the sequence until a valid PLACE command has been executed.
@@ -27,6 +29,8 @@ REPORT will announce the X,Y and F of Beefy. This can be in any form, but standa
 ---
 
 ## Scripts
+
+> Open a terminal in the root directory to run one of the following scripts.
 
 #### `npm run start`
 
