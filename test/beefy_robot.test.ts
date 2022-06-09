@@ -40,3 +40,35 @@ describe('test BeefyRobot rotate method', () => {
     expect(beefyRobot.report()).toMatch(expected);
   });
 });
+
+describe('test BeefyRobot move method', () => {
+  const beefyRobot = new BeefyRobot();
+
+  test('invalid y move', () => {
+    beefyRobot.place('PLACE 0,4,NORTH');
+    beefyRobot.move();
+    const expected = '0,4,NORTH';
+    expect(beefyRobot.report()).toMatch(expected);
+  });
+
+  test('valid y move', () => {
+    beefyRobot.place('PLACE 0,0,NORTH');
+    beefyRobot.move();
+    const expected = '0,1,NORTH';
+    expect(beefyRobot.report()).toMatch(expected);
+  });
+
+  test('invalid x move', () => {
+    beefyRobot.place('PLACE 4,0,EAST');
+    beefyRobot.move();
+    const expected = '4,0,EAST';
+    expect(beefyRobot.report()).toMatch(expected);
+  });
+
+  test('valid x move', () => {
+    beefyRobot.place('PLACE 0,0,EAST');
+    beefyRobot.move();
+    const expected = '1,0,EAST';
+    expect(beefyRobot.report()).toMatch(expected);
+  });
+});
