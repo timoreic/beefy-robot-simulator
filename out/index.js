@@ -22,11 +22,21 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 const fs = __importStar(require("fs"));
+const BeefyRobot_1 = __importDefault(require("./BeefyRobot"));
 // Read commands.txt to an array
 const commands = fs
     .readFileSync('./commands.txt', 'utf8')
     .toString()
     .split('\n');
-console.log(commands);
+// Initialise BeefyRobot object
+const beefyRobot = new BeefyRobot_1.default();
+// Execute commands
+for (const index in commands) {
+    beefyRobot.place(commands[index]);
+}
+console.log(beefyRobot.position);
